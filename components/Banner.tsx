@@ -25,7 +25,7 @@ function Banner({netflixOriginals} : Props) {
       <div className="text-2xl font-bold md:text-4xl lg:text-7xl ">
         <h1>{movie?.title || movie?.name || movie?.original_name }</h1>
       </div>
-      <p className='max-w-ws text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>{movie?.overview}</p>
+      <p className='max-w-ws text-shadow-md text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>{movie?.overview}</p>
       <div className="flex space-x-3">
         <button className="bannerButton bg-white text-black">
           <FaPlay className='h-4 w-4 text-black md:h-7 md:w-7'/>Play</button>
