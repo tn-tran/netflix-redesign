@@ -3,7 +3,7 @@ import Image from 'next/image'
 import {Movie} from '../typings'
 import { baseUrl } from '../constants/movie'
 import {FaPlay} from "react-icons/fa"
-import {InformationCircleIcon} from '@heroicons/react/20/solid1'
+import {InformationCircleIcon} from '@heroicons/react/20/solid'
 interface Props { 
   netflixOriginals: Movie[]
 }
