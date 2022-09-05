@@ -4,6 +4,8 @@ import { baseUrl } from '../constants/movie'
 import { Movie } from '../typings'
 
 interface Props {
+	// When using firebase
+	// movie: Movie | DocumentData
 	movie: Movie
 }
 
