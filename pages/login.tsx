@@ -4,7 +4,7 @@ import React from 'react'
 
 function Login() {
 	return (
-		<div className="relative flex h-screen w-screen flex-col md:items-center md:justify-center">
+		<div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
 			<Head>
 				<title>Home - Netflix</title>
 				<link rel="icon" href="/favicon.ico" />
@@ -15,6 +15,40 @@ function Login() {
 				className="-z-10 !hidden opacity-60 sm:!inline"
 				objectFit="cover"
 			/>
+			<div className="absolute left-2 top-1 h-20 w-44 cursor-pointer md:left-8 md:top-4">
+				<Image
+					src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+					layout="fill"
+					objectFit="contain"
+					priority
+				/>
+			</div>
+			<form
+				action=""
+				className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
+			>
+				<h1>Sign In</h1>
+				<div className="space-y-4">
+					<label className="inline-block w-full">
+						<input
+							type="email"
+							placeholder="Email"
+							name=""
+							id=""
+							className="input"
+						/>
+					</label>
+					<label className="inline-block w-full">
+						<input
+							type="password"
+							placeholder="Password"
+							name=""
+							id=""
+							className="input"
+						/>
+					</label>
+				</div>
+			</form>
 		</div>
 	)
 }
