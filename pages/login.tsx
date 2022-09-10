@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 function Login() {
+	const [login, setLogin] = useState(false)
 	return (
 		<div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
 			<Head>
@@ -27,7 +28,7 @@ function Login() {
 				action=""
 				className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
 			>
-				<h1>Sign In</h1>
+				<h1 className="text-4xl font-semibold">Sign In</h1>
 				<div className="space-y-4">
 					<label className="inline-block w-full">
 						<input
@@ -47,6 +48,15 @@ function Login() {
 							className="input"
 						/>
 					</label>
+				</div>
+				<button className="w-full rounded bg-[#e50914] py-3 font semibold">
+					Sign in
+				</button>
+				<div className="text-[gray] ">
+					New to Netflix?{' '}
+					<button type="submit" className="text-white hover:underline">
+						Sign up now
+					</button>
 				</div>
 			</form>
 		</div>
