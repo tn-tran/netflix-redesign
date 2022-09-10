@@ -1,9 +1,22 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+interface Inputs {
+	email: string
+	password: string
+}
 
 function Login() {
 	const [login, setLogin] = useState(false)
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm<Inputs>()
+	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+	console.log(watch('email')) // watch input value by passing the name of it
 	return (
 		<div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
 			<Head>
@@ -25,6 +38,7 @@ function Login() {
 				/>
 			</div>
 			<form
+				onSubmit={handleSubmit(onSubmit)}
 				action=""
 				className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
 			>
@@ -34,18 +48,16 @@ function Login() {
 						<input
 							type="email"
 							placeholder="Email"
-							name=""
-							id=""
 							className="input"
+							{...register('email', { required: true })}
 						/>
 					</label>
 					<label className="inline-block w-full">
 						<input
 							type="password"
 							placeholder="Password"
-							name=""
-							id=""
 							className="input"
+							{...register('password', { required: true })}
 						/>
 					</label>
 				</div>
